@@ -10,7 +10,7 @@ import { useState } from 'react';
 import { database } from '../services/firebase';
 
 export function NewRoom() {
-    const { user, signWithGoogle } = useAuth();
+    const { user } = useAuth();
     const history = useHistory();
     const [newRoom, setNewRoom] = useState('');
 
