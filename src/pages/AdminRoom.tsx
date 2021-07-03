@@ -52,6 +52,16 @@ export function AdminRoom() {
     })
   }
 
+  // function sortQuestionsByLike(q1, q2) {
+  //   if (q1.likeCount < q2.likeCount) {
+  //     return -1;
+  //   }
+  //   if (q1.likeCount > q2.likeCount) {
+  //     return 2;
+  //   }
+  //   return 0;
+  // }
+
   return (
     <div id="page-room">
       <header>
@@ -71,7 +81,7 @@ export function AdminRoom() {
         </div>
 
         <div className="question-list">
-          {questions.map(question => {
+          {questions.sort((q1, q2) => - q1.likeCount + q2.likeCount).map(question => {
             return (
               <Question
                 key={question.id}
